@@ -13,8 +13,8 @@
     IBOutlet UIImageView *photo;
 }
 
-@property (nonatomic, retain) UIImage *theImage;
-
 - (id)initWithPhoto:(UIImage *)image;
+
+@property (nonatomic, retain) UIImage *theImage;
 
 @end

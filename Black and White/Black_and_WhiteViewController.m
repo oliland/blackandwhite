@@ -75,11 +75,13 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     [[picker parentViewController] dismissModalViewControllerAnimated:YES];
     [picker release];
     
-    SendPhoto *view;
-    if (editedImage)
-        view = [[SendPhoto alloc] initWithImage:editedImage];
-    else
-        view = [[SendPhoto alloc] initWithImage:originalImage];
+    UIImage *img;
+    if (editedImage) {
+        img = editedImage;
+    } else {
+        img = originalImage;
+    }
+    SendPhoto *view = [[SendPhoto alloc] initWithPhoto:img];
     [self presentModalViewController:view animated:TRUE];
 }
 
