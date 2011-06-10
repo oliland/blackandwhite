@@ -25,13 +25,12 @@
 
 #pragma mark - View lifecycle
 
-/*
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 }
-*/
 
 - (void)viewDidUnload
 {
@@ -44,6 +43,39 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+- (IBAction)displayCamera:(NSObject *)sender
+{
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
+    {
+        imagePicker = [[UIImagePickerController alloc] init];
+        imagePicker.delegate = self;
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        imagePicker.allowsEditing = YES;
+        [self presentModalViewController:imagePicker animated:YES];
+    } else
+        NSLog(@"Camera not found");
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    [[picker parentViewController] dismissModalViewControllerAnimated:YES];
+    [picker release];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker
+didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    UIImage *originalImage, *editedImage;
+    originalImage = (UIImage *) [info objectForKey:UIImagePickerControllerOriginalImage];
+    editedImage = (UIImage *) [info objectForKey:UIImagePickerControllerEditedImage];
+    if (editedImage)
+        photo.image = editedImage;
+    else
+        photo.image = originalImage;
+    [[picker parentViewController] dismissModalViewControllerAnimated:YES];
+    [picker release];
 }
 
 @end

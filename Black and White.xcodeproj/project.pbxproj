@@ -39,20 +39,20 @@
 		1AD0176A13A2B7A9001241C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1AD0176C13A2B7A9001241C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1AD0176E13A2B7A9001241C5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		1AD0177213A2B7A9001241C5 /* Black and White-Info.plist */ = {isa = PBXFileReference; path = "Black and White-Info.plist"; sourceTree = "<group>"; };
+		1AD0177213A2B7A9001241C5 /* Black and White-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Black and White-Info.plist"; sourceTree = "<group>"; };
 		1AD0177413A2B7A9001241C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		1AD0177613A2B7A9001241C5 /* Black and White-Prefix.pch */ = {isa = PBXFileReference; path = "Black and White-Prefix.pch"; sourceTree = "<group>"; };
+		1AD0177613A2B7A9001241C5 /* Black and White-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Black and White-Prefix.pch"; sourceTree = "<group>"; };
 		1AD0177713A2B7A9001241C5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		1AD0177913A2B7A9001241C5 /* Black_and_WhiteAppDelegate.h */ = {isa = PBXFileReference; path = Black_and_WhiteAppDelegate.h; sourceTree = "<group>"; };
+		1AD0177913A2B7A9001241C5 /* Black_and_WhiteAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Black_and_WhiteAppDelegate.h; sourceTree = "<group>"; };
 		1AD0177A13A2B7A9001241C5 /* Black_and_WhiteAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Black_and_WhiteAppDelegate.m; sourceTree = "<group>"; };
 		1AD0177D13A2B7A9001241C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		1AD0177F13A2B7A9001241C5 /* Black_and_WhiteViewController.h */ = {isa = PBXFileReference; path = Black_and_WhiteViewController.h; sourceTree = "<group>"; };
+		1AD0177F13A2B7A9001241C5 /* Black_and_WhiteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Black_and_WhiteViewController.h; sourceTree = "<group>"; };
 		1AD0178013A2B7A9001241C5 /* Black_and_WhiteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Black_and_WhiteViewController.m; sourceTree = "<group>"; };
 		1AD0178313A2B7A9001241C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Black_and_WhiteViewController.xib; sourceTree = "<group>"; };
 		1AD0178A13A2B7A9001241C5 /* Black and WhiteTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Black and WhiteTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1AD0179213A2B7A9001241C5 /* Black and WhiteTests-Info.plist */ = {isa = PBXFileReference; path = "Black and WhiteTests-Info.plist"; sourceTree = "<group>"; };
+		1AD0179213A2B7A9001241C5 /* Black and WhiteTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Black and WhiteTests-Info.plist"; sourceTree = "<group>"; };
 		1AD0179413A2B7A9001241C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		1AD0179613A2B7A9001241C5 /* Black and WhiteTests-Prefix.pch */ = {isa = PBXFileReference; path = "Black and WhiteTests-Prefix.pch"; sourceTree = "<group>"; };
+		1AD0179613A2B7A9001241C5 /* Black and WhiteTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Black and WhiteTests-Prefix.pch"; sourceTree = "<group>"; };
 		1AD0179713A2B7A9001241C5 /* Black_and_WhiteTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Black_and_WhiteTests.h; sourceTree = "<group>"; };
 		1AD0179913A2B7A9001241C5 /* Black_and_WhiteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Black_and_WhiteTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
