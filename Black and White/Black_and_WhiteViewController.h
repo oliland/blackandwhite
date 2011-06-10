@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Black_and_WhiteViewController : UIViewController {
-    
+@interface Black_and_WhiteViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
+    IBOutlet UIButton *photoButton;
+    IBOutlet UIImageView *photo;
+    UIImagePickerController *imagePicker;
 }
+
+- (IBAction)displayCamera:(NSObject *)sender;
 
 @end
