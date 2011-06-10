@@ -10,7 +10,6 @@
 
 @interface Black_and_WhiteViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
     IBOutlet UIButton *photoButton;
-    IBOutlet UIImageView *photo;
     UIImagePickerController *imagePicker;
 }
 

@@ -22,6 +22,8 @@
 		107B75BB13A2CDB10099D9ED /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 107B75AC13A2CDB10099D9ED /* SBJsonStreamParserAdapter.m */; };
 		107B75BC13A2CDB10099D9ED /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 107B75AE13A2CDB10099D9ED /* SBJsonStreamParserAccumulator.m */; };
 		107B75BD13A2CDB10099D9ED /* SBStateStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 107B75B013A2CDB10099D9ED /* SBStateStack.m */; };
+		107B75C613A2D05B0099D9ED /* SendPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 107B75C413A2D05B0099D9ED /* SendPhoto.m */; };
+		107B75C713A2D05B0099D9ED /* SendPhoto.xib in Resources */ = {isa = PBXBuildFile; fileRef = 107B75C513A2D05B0099D9ED /* SendPhoto.xib */; };
 		1AD0176B13A2B7A9001241C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD0176A13A2B7A9001241C5 /* UIKit.framework */; };
 		1AD0176D13A2B7A9001241C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD0176C13A2B7A9001241C5 /* Foundation.framework */; };
 		1AD0176F13A2B7A9001241C5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD0176E13A2B7A9001241C5 /* CoreGraphics.framework */; };
@@ -81,6 +83,9 @@
 		107B75AE13A2CDB10099D9ED /* SBJsonStreamParserAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAccumulator.m; sourceTree = "<group>"; };
 		107B75AF13A2CDB10099D9ED /* SBStateStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBStateStack.h; sourceTree = "<group>"; };
 		107B75B013A2CDB10099D9ED /* SBStateStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBStateStack.m; sourceTree = "<group>"; };
+		107B75C313A2D05B0099D9ED /* SendPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendPhoto.h; sourceTree = "<group>"; };
+		107B75C413A2D05B0099D9ED /* SendPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendPhoto.m; sourceTree = "<group>"; };
+		107B75C513A2D05B0099D9ED /* SendPhoto.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendPhoto.xib; sourceTree = "<group>"; };
 		1AD0176613A2B7A9001241C5 /* Black and White.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Black and White.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AD0176A13A2B7A9001241C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1AD0176C13A2B7A9001241C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -203,6 +208,9 @@
 				107B759013A2CD930099D9ED /* ReturnPhoto.xib */,
 				1AD0177F13A2B7A9001241C5 /* Black_and_WhiteViewController.h */,
 				1AD0178013A2B7A9001241C5 /* Black_and_WhiteViewController.m */,
+				107B75C313A2D05B0099D9ED /* SendPhoto.h */,
+				107B75C413A2D05B0099D9ED /* SendPhoto.m */,
+				107B75C513A2D05B0099D9ED /* SendPhoto.xib */,
 				1AD0178213A2B7A9001241C5 /* Black_and_WhiteViewController.xib */,
 				1AD0177113A2B7A9001241C5 /* Supporting Files */,
 			);
@@ -311,6 +319,7 @@
 				1AD0177E13A2B7A9001241C5 /* MainWindow.xib in Resources */,
 				1AD0178413A2B7A9001241C5 /* Black_and_WhiteViewController.xib in Resources */,
 				107B759213A2CD930099D9ED /* ReturnPhoto.xib in Resources */,
+				107B75C713A2D05B0099D9ED /* SendPhoto.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +372,7 @@
 				107B75BB13A2CDB10099D9ED /* SBJsonStreamParserAdapter.m in Sources */,
 				107B75BC13A2CDB10099D9ED /* SBJsonStreamParserAccumulator.m in Sources */,
 				107B75BD13A2CDB10099D9ED /* SBStateStack.m in Sources */,
+				107B75C613A2D05B0099D9ED /* SendPhoto.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,7 +471,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Black and White/Black and White-Prefix.pch";
 				INFOPLIST_FILE = "Black and White/Black and White-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -474,7 +486,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Black and White/Black and White-Prefix.pch";
 				INFOPLIST_FILE = "Black and White/Black and White-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};

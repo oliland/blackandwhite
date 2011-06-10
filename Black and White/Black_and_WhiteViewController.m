@@ -7,6 +7,7 @@
 //
 
 #import "Black_and_WhiteViewController.h"
+#import "SendPhoto.h"
 
 @implementation Black_and_WhiteViewController
 
@@ -67,15 +68,19 @@
 - (void)imagePickerController:(UIImagePickerController *)picker
 didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
+    [[SendPhoto alloc] init];
     UIImage *originalImage, *editedImage;
     originalImage = (UIImage *) [info objectForKey:UIImagePickerControllerOriginalImage];
     editedImage = (UIImage *) [info objectForKey:UIImagePickerControllerEditedImage];
-    if (editedImage)
-        photo.image = editedImage;
-    else
-        photo.image = originalImage;
     [[picker parentViewController] dismissModalViewControllerAnimated:YES];
     [picker release];
+    
+    SendPhoto *view;
+    if (editedImage)
+        view = [[SendPhoto alloc] initWithImage:editedImage];
+    else
+        view = [[SendPhoto alloc] initWithImage:originalImage];
+    [self presentModalViewController:view animated:TRUE];
 }
 
 @end
