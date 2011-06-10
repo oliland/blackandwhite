@@ -1,0 +1,458 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1AD0176B13A2B7A9001241C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD0176A13A2B7A9001241C5 /* UIKit.framework */; };
+		1AD0176D13A2B7A9001241C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD0176C13A2B7A9001241C5 /* Foundation.framework */; };
+		1AD0176F13A2B7A9001241C5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD0176E13A2B7A9001241C5 /* CoreGraphics.framework */; };
+		1AD0177513A2B7A9001241C5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AD0177313A2B7A9001241C5 /* InfoPlist.strings */; };
+		1AD0177813A2B7A9001241C5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD0177713A2B7A9001241C5 /* main.m */; };
+		1AD0177B13A2B7A9001241C5 /* Black_and_WhiteAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD0177A13A2B7A9001241C5 /* Black_and_WhiteAppDelegate.m */; };
+		1AD0177E13A2B7A9001241C5 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AD0177C13A2B7A9001241C5 /* MainWindow.xib */; };
+		1AD0178113A2B7A9001241C5 /* Black_and_WhiteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD0178013A2B7A9001241C5 /* Black_and_WhiteViewController.m */; };
+		1AD0178413A2B7A9001241C5 /* Black_and_WhiteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1AD0178213A2B7A9001241C5 /* Black_and_WhiteViewController.xib */; };
+		1AD0178B13A2B7A9001241C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD0176A13A2B7A9001241C5 /* UIKit.framework */; };
+		1AD0178C13A2B7A9001241C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD0176C13A2B7A9001241C5 /* Foundation.framework */; };
+		1AD0178D13A2B7A9001241C5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD0176E13A2B7A9001241C5 /* CoreGraphics.framework */; };
+		1AD0179513A2B7A9001241C5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AD0179313A2B7A9001241C5 /* InfoPlist.strings */; };
+		1AD0179813A2B7A9001241C5 /* Black_and_WhiteTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 1AD0179713A2B7A9001241C5 /* Black_and_WhiteTests.h */; };
+		1AD0179A13A2B7A9001241C5 /* Black_and_WhiteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD0179913A2B7A9001241C5 /* Black_and_WhiteTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1AD0178E13A2B7A9001241C5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1AD0175D13A2B7A8001241C5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1AD0176513A2B7A8001241C5;
+			remoteInfo = "Black and White";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1AD0176613A2B7A9001241C5 /* Black and White.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Black and White.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AD0176A13A2B7A9001241C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		1AD0176C13A2B7A9001241C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1AD0176E13A2B7A9001241C5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		1AD0177213A2B7A9001241C5 /* Black and White-Info.plist */ = {isa = PBXFileReference; path = "Black and White-Info.plist"; sourceTree = "<group>"; };
+		1AD0177413A2B7A9001241C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1AD0177613A2B7A9001241C5 /* Black and White-Prefix.pch */ = {isa = PBXFileReference; path = "Black and White-Prefix.pch"; sourceTree = "<group>"; };
+		1AD0177713A2B7A9001241C5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1AD0177913A2B7A9001241C5 /* Black_and_WhiteAppDelegate.h */ = {isa = PBXFileReference; path = Black_and_WhiteAppDelegate.h; sourceTree = "<group>"; };
+		1AD0177A13A2B7A9001241C5 /* Black_and_WhiteAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Black_and_WhiteAppDelegate.m; sourceTree = "<group>"; };
+		1AD0177D13A2B7A9001241C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		1AD0177F13A2B7A9001241C5 /* Black_and_WhiteViewController.h */ = {isa = PBXFileReference; path = Black_and_WhiteViewController.h; sourceTree = "<group>"; };
+		1AD0178013A2B7A9001241C5 /* Black_and_WhiteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Black_and_WhiteViewController.m; sourceTree = "<group>"; };
+		1AD0178313A2B7A9001241C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/Black_and_WhiteViewController.xib; sourceTree = "<group>"; };
+		1AD0178A13A2B7A9001241C5 /* Black and WhiteTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Black and WhiteTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AD0179213A2B7A9001241C5 /* Black and WhiteTests-Info.plist */ = {isa = PBXFileReference; path = "Black and WhiteTests-Info.plist"; sourceTree = "<group>"; };
+		1AD0179413A2B7A9001241C5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1AD0179613A2B7A9001241C5 /* Black and WhiteTests-Prefix.pch */ = {isa = PBXFileReference; path = "Black and WhiteTests-Prefix.pch"; sourceTree = "<group>"; };
+		1AD0179713A2B7A9001241C5 /* Black_and_WhiteTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Black_and_WhiteTests.h; sourceTree = "<group>"; };
+		1AD0179913A2B7A9001241C5 /* Black_and_WhiteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Black_and_WhiteTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1AD0176313A2B7A8001241C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AD0176B13A2B7A9001241C5 /* UIKit.framework in Frameworks */,
+				1AD0176D13A2B7A9001241C5 /* Foundation.framework in Frameworks */,
+				1AD0176F13A2B7A9001241C5 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AD0178613A2B7A9001241C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AD0178B13A2B7A9001241C5 /* UIKit.framework in Frameworks */,
+				1AD0178C13A2B7A9001241C5 /* Foundation.framework in Frameworks */,
+				1AD0178D13A2B7A9001241C5 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1AD0175B13A2B7A8001241C5 = {
+			isa = PBXGroup;
+			children = (
+				1AD0177013A2B7A9001241C5 /* Black and White */,
+				1AD0179013A2B7A9001241C5 /* Black and WhiteTests */,
+				1AD0176913A2B7A9001241C5 /* Frameworks */,
+				1AD0176713A2B7A9001241C5 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1AD0176713A2B7A9001241C5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1AD0176613A2B7A9001241C5 /* Black and White.app */,
+				1AD0178A13A2B7A9001241C5 /* Black and WhiteTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1AD0176913A2B7A9001241C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1AD0176A13A2B7A9001241C5 /* UIKit.framework */,
+				1AD0176C13A2B7A9001241C5 /* Foundation.framework */,
+				1AD0176E13A2B7A9001241C5 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1AD0177013A2B7A9001241C5 /* Black and White */ = {
+			isa = PBXGroup;
+			children = (
+				1AD0177913A2B7A9001241C5 /* Black_and_WhiteAppDelegate.h */,
+				1AD0177A13A2B7A9001241C5 /* Black_and_WhiteAppDelegate.m */,
+				1AD0177C13A2B7A9001241C5 /* MainWindow.xib */,
+				1AD0177F13A2B7A9001241C5 /* Black_and_WhiteViewController.h */,
+				1AD0178013A2B7A9001241C5 /* Black_and_WhiteViewController.m */,
+				1AD0178213A2B7A9001241C5 /* Black_and_WhiteViewController.xib */,
+				1AD0177113A2B7A9001241C5 /* Supporting Files */,
+			);
+			path = "Black and White";
+			sourceTree = "<group>";
+		};
+		1AD0177113A2B7A9001241C5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1AD0177213A2B7A9001241C5 /* Black and White-Info.plist */,
+				1AD0177313A2B7A9001241C5 /* InfoPlist.strings */,
+				1AD0177613A2B7A9001241C5 /* Black and White-Prefix.pch */,
+				1AD0177713A2B7A9001241C5 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1AD0179013A2B7A9001241C5 /* Black and WhiteTests */ = {
+			isa = PBXGroup;
+			children = (
+				1AD0179713A2B7A9001241C5 /* Black_and_WhiteTests.h */,
+				1AD0179913A2B7A9001241C5 /* Black_and_WhiteTests.m */,
+				1AD0179113A2B7A9001241C5 /* Supporting Files */,
+			);
+			path = "Black and WhiteTests";
+			sourceTree = "<group>";
+		};
+		1AD0179113A2B7A9001241C5 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1AD0179213A2B7A9001241C5 /* Black and WhiteTests-Info.plist */,
+				1AD0179313A2B7A9001241C5 /* InfoPlist.strings */,
+				1AD0179613A2B7A9001241C5 /* Black and WhiteTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1AD0176513A2B7A8001241C5 /* Black and White */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1AD0179D13A2B7A9001241C5 /* Build configuration list for PBXNativeTarget "Black and White" */;
+			buildPhases = (
+				1AD0176213A2B7A8001241C5 /* Sources */,
+				1AD0176313A2B7A8001241C5 /* Frameworks */,
+				1AD0176413A2B7A8001241C5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Black and White";
+			productName = "Black and White";
+			productReference = 1AD0176613A2B7A9001241C5 /* Black and White.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1AD0178913A2B7A9001241C5 /* Black and WhiteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1AD017A013A2B7A9001241C5 /* Build configuration list for PBXNativeTarget "Black and WhiteTests" */;
+			buildPhases = (
+				1AD0178513A2B7A9001241C5 /* Sources */,
+				1AD0178613A2B7A9001241C5 /* Frameworks */,
+				1AD0178713A2B7A9001241C5 /* Resources */,
+				1AD0178813A2B7A9001241C5 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1AD0178F13A2B7A9001241C5 /* PBXTargetDependency */,
+			);
+			name = "Black and WhiteTests";
+			productName = "Black and WhiteTests";
+			productReference = 1AD0178A13A2B7A9001241C5 /* Black and WhiteTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1AD0175D13A2B7A8001241C5 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1AD0176013A2B7A8001241C5 /* Build configuration list for PBXProject "Black and White" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1AD0175B13A2B7A8001241C5;
+			productRefGroup = 1AD0176713A2B7A9001241C5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1AD0176513A2B7A8001241C5 /* Black and White */,
+				1AD0178913A2B7A9001241C5 /* Black and WhiteTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1AD0176413A2B7A8001241C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AD0177513A2B7A9001241C5 /* InfoPlist.strings in Resources */,
+				1AD0177E13A2B7A9001241C5 /* MainWindow.xib in Resources */,
+				1AD0178413A2B7A9001241C5 /* Black_and_WhiteViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AD0178713A2B7A9001241C5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AD0179513A2B7A9001241C5 /* InfoPlist.strings in Resources */,
+				1AD0179813A2B7A9001241C5 /* Black_and_WhiteTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1AD0178813A2B7A9001241C5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1AD0176213A2B7A8001241C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AD0177813A2B7A9001241C5 /* main.m in Sources */,
+				1AD0177B13A2B7A9001241C5 /* Black_and_WhiteAppDelegate.m in Sources */,
+				1AD0178113A2B7A9001241C5 /* Black_and_WhiteViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AD0178513A2B7A9001241C5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AD0179A13A2B7A9001241C5 /* Black_and_WhiteTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1AD0178F13A2B7A9001241C5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1AD0176513A2B7A8001241C5 /* Black and White */;
+			targetProxy = 1AD0178E13A2B7A9001241C5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1AD0177313A2B7A9001241C5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1AD0177413A2B7A9001241C5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		1AD0177C13A2B7A9001241C5 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1AD0177D13A2B7A9001241C5 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		1AD0178213A2B7A9001241C5 /* Black_and_WhiteViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1AD0178313A2B7A9001241C5 /* en */,
+			);
+			name = Black_and_WhiteViewController.xib;
+			sourceTree = "<group>";
+		};
+		1AD0179313A2B7A9001241C5 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1AD0179413A2B7A9001241C5 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1AD0179B13A2B7A9001241C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1AD0179C13A2B7A9001241C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		1AD0179E13A2B7A9001241C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Black and White/Black and White-Prefix.pch";
+				INFOPLIST_FILE = "Black and White/Black and White-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		1AD0179F13A2B7A9001241C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Black and White/Black and White-Prefix.pch";
+				INFOPLIST_FILE = "Black and White/Black and White-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		1AD017A113A2B7A9001241C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Black and White.app/Black and White";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Black and WhiteTests/Black and WhiteTests-Prefix.pch";
+				INFOPLIST_FILE = "Black and WhiteTests/Black and WhiteTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		1AD017A213A2B7A9001241C5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Black and White.app/Black and White";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Black and WhiteTests/Black and WhiteTests-Prefix.pch";
+				INFOPLIST_FILE = "Black and WhiteTests/Black and WhiteTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1AD0176013A2B7A8001241C5 /* Build configuration list for PBXProject "Black and White" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AD0179B13A2B7A9001241C5 /* Debug */,
+				1AD0179C13A2B7A9001241C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1AD0179D13A2B7A9001241C5 /* Build configuration list for PBXNativeTarget "Black and White" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AD0179E13A2B7A9001241C5 /* Debug */,
+				1AD0179F13A2B7A9001241C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1AD017A013A2B7A9001241C5 /* Build configuration list for PBXNativeTarget "Black and WhiteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AD017A113A2B7A9001241C5 /* Debug */,
+				1AD017A213A2B7A9001241C5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1AD0175D13A2B7A8001241C5 /* Project object */;
+}
