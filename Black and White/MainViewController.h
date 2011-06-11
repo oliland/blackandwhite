@@ -11,6 +11,7 @@
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
     UIImagePickerController *imagePicker;
     IBOutlet UIImageView *photoView;
+    IBOutlet UIButton *flipViewButton;
 }
 
 - (IBAction)showInfo:(id)sender;

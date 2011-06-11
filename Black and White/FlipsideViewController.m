@@ -14,7 +14,11 @@
 NSString *const FlickrAPIKey = @"da6619cd8f7a71642b9490cf81c6dbbd";
 NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
 
-@synthesize delegate=_delegate, currentLocation, locationManager;
+@synthesize delegate=_delegate, currentLocation, locationManager, scrollView, imageView;
+
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView{
+    return imageView;
+}
 
 -(void)searchFlickrPhotos:(double)margin
 {
@@ -178,6 +182,11 @@ NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
      */
 }
 
+- (IBAction)showMap:(NSObject *)sender
+{
+    //[B openURL:[[NSURL alloc] initWithString: @"http://maps.google.com/maps?q=London"]]
+}
+
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
     if(currentLocation == nil) {
         [locationManager stopUpdatingLocation];
@@ -188,6 +197,8 @@ NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
 
 - (void)dealloc
 {
+    [imageView release];
+    [scrollView release];
     [super dealloc];
 }
 
@@ -212,6 +223,13 @@ NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
     locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers;
     locationManager.delegate = self;
     [locationManager startUpdatingLocation];
+    
+    scrollView.contentSize = CGSizeMake(imageView.frame.size.width, imageView.frame.size.height);
+    scrollView.maximumZoomScale = 4.0;
+    scrollView.minimumZoomScale = 0.75;
+    scrollView.clipsToBounds = YES;
+    scrollView.delegate = self;
+    [scrollView addSubview:imageView];
 }
 
 - (void)viewDidUnload

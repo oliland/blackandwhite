@@ -17,6 +17,7 @@
 {
     [super viewDidLoad];
     imagePicker = [[UIImagePickerController alloc] init];
+    flipViewButton.hidden = YES;
 }
 
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller
@@ -67,6 +68,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     }
     [picker release];
     NSLog(@"finished picking image");
+    flipViewButton.hidden = NO;
     // Now trying to do some location shit
 }
 

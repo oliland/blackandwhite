@@ -13,16 +13,19 @@
 
 @protocol FlipsideViewControllerDelegate;
 
-@interface FlipsideViewController : UIViewController<CLLocationManagerDelegate> {
+@interface FlipsideViewController : UIViewController<CLLocationManagerDelegate, UIScrollViewDelegate> {
     SBJsonParser *jsonparser;
     NSURLConnection *lastCon;
     CLLocationDegrees minLon, minLat, maxLon, maxLat;
     IBOutlet UIImageView *imageView;
+    IBOutlet UIScrollView *scrollView;
 }
 
 @property (nonatomic, assign) id <FlipsideViewControllerDelegate> delegate;
 @property (nonatomic, assign) CLLocation *currentLocation;
 @property (nonatomic, assign) CLLocationManager *locationManager;
+@property (nonatomic, retain) UIScrollView *scrollView;
+@property (nonatomic, retain) UIImageView *imageView;
 
 - (IBAction)done:(id)sender;
 - (void)searchFlickrPhotos:(double)margin;
