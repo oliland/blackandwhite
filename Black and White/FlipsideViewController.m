@@ -115,9 +115,9 @@ NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
     if(currentLocation == nil) {
         [locationManager stopUpdatingLocation];
+        currentLocation = newLocation;
         [self searchFlickrPhotos];
     }
-    currentLocation = newLocation;
 }
 
 - (void)dealloc
