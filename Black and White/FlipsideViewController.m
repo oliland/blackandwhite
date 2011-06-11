@@ -19,7 +19,11 @@ NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
 -(void)searchFlickrPhotos:(double)margin
 {
     CLLocationDegrees newLon, newLat;
-    newLon = currentLocation.coordinate.longitude * -1;
+    newLon = currentLocation.coordinate.longitude;
+    if (newLon < 0)
+        newLon = newLon + 180;
+    else
+        newLon = newLon - 180;
     newLat = currentLocation.coordinate.latitude * -1;
     
     minLon = newLon - (margin * 2);
