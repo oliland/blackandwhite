@@ -13,6 +13,7 @@
 - (void)dealloc
 {
     [sendPhoto release];
+    [imagePicker release];
     [super dealloc];
 }
 
@@ -30,6 +31,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    // Should be in app delegate for speed
+    imagePicker = [[UIImagePickerController alloc] init];
 }
 
 - (void)viewDidUnload
@@ -47,7 +50,6 @@
 
 - (IBAction)displayCamera:(NSObject *)sender
 {
-    imagePicker = [[UIImagePickerController alloc] init];
     imagePicker.delegate = self;
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
     {

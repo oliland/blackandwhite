@@ -42,6 +42,7 @@
     [super viewDidLoad];
     photoView.image = theImage;
     // We really don't care
+    locationManager = [[CLLocationManager alloc] init];
     locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers;
     locationManager.delegate = self;
     [locationManager startUpdatingLocation];
@@ -50,11 +51,12 @@
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
     [locationManager stopUpdatingLocation];
+    [self.delegate sendPhotoDidFinish:self withLocation:bestEffortAtLocation withError:nil];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
-    [self.delegate sendPhotoDidFinish:self withLocation:bestEffortAtLocation withError:@"Error getting location"];
+    [self.delegate sendPhotoDidFinish:self withLocation:nil withError:@"Error getting location"];
 }
 
 - (void)viewDidUnload
