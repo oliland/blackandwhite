@@ -10,11 +10,8 @@
 
 @implementation Black_and_WhiteViewController
 
-@synthesize theImage;
-
 - (void)dealloc
 {
-    [theImage release];
     [sendPhoto release];
     [super dealloc];
 }
@@ -91,13 +88,19 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     {
         [self presentModalViewController:sendPhoto animated:NO];
     }
+    if (returnPhoto.currentLocation) {
+        [self presentModalViewController:returnPhoto animated:NO];
+    }
 }
 
 - (void)sendPhotoDidFinish:(SendPhotoView *)_sendPhoto withLocation:(CLLocation *)location withError:(NSString *)error {
     [[_sendPhoto parentViewController] dismissModalViewControllerAnimated:YES];
     [sendPhoto release];
     if (location) {
-        [self dismissModalViewControllerAnimated:TRUE];
+        returnPhoto = [[ReturnPhotoView alloc] initWithNibName:@"ReturnPhoto" bundle:nil];
+        returnPhoto.currentLocation = location;
+        //returnPhoto.delegate = self;
+        [self dismissModalViewControllerAnimated:YES];
     }
     errorMessage.text = error;
 }

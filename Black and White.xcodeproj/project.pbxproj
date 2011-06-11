@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		107B759113A2CD930099D9ED /* ReturnPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 107B758F13A2CD930099D9ED /* ReturnPhoto.m */; };
+		107B759113A2CD930099D9ED /* ReturnPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 107B758F13A2CD930099D9ED /* ReturnPhotoView.m */; };
 		107B759213A2CD930099D9ED /* ReturnPhoto.xib in Resources */ = {isa = PBXBuildFile; fileRef = 107B759013A2CD930099D9ED /* ReturnPhoto.xib */; };
 		107B75B113A2CDB10099D9ED /* NSObject+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 107B759813A2CDB10099D9ED /* NSObject+JSON.m */; };
 		107B75B213A2CDB10099D9ED /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 107B759A13A2CDB10099D9ED /* SBJsonWriter.m */; };
@@ -53,8 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		107B758E13A2CD930099D9ED /* ReturnPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReturnPhoto.h; sourceTree = "<group>"; };
-		107B758F13A2CD930099D9ED /* ReturnPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReturnPhoto.m; sourceTree = "<group>"; };
+		107B758E13A2CD930099D9ED /* ReturnPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReturnPhotoView.h; sourceTree = "<group>"; };
+		107B758F13A2CD930099D9ED /* ReturnPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReturnPhotoView.m; sourceTree = "<group>"; };
 		107B759013A2CD930099D9ED /* ReturnPhoto.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReturnPhoto.xib; sourceTree = "<group>"; };
 		107B759513A2CDB10099D9ED /* SBJsonIncludes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonIncludes.h; sourceTree = "<group>"; };
 		107B759613A2CDB10099D9ED /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
@@ -207,8 +207,8 @@
 				1AD0177913A2B7A9001241C5 /* Black_and_WhiteAppDelegate.h */,
 				1AD0177A13A2B7A9001241C5 /* Black_and_WhiteAppDelegate.m */,
 				1AD0177C13A2B7A9001241C5 /* MainWindow.xib */,
-				107B758E13A2CD930099D9ED /* ReturnPhoto.h */,
-				107B758F13A2CD930099D9ED /* ReturnPhoto.m */,
+				107B758E13A2CD930099D9ED /* ReturnPhotoView.h */,
+				107B758F13A2CD930099D9ED /* ReturnPhotoView.m */,
 				107B759013A2CD930099D9ED /* ReturnPhoto.xib */,
 				1AD0177F13A2B7A9001241C5 /* Black_and_WhiteViewController.h */,
 				1AD0178013A2B7A9001241C5 /* Black_and_WhiteViewController.m */,
@@ -362,7 +362,7 @@
 				1AD0177813A2B7A9001241C5 /* main.m in Sources */,
 				1AD0177B13A2B7A9001241C5 /* Black_and_WhiteAppDelegate.m in Sources */,
 				1AD0178113A2B7A9001241C5 /* Black_and_WhiteViewController.m in Sources */,
-				107B759113A2CD930099D9ED /* ReturnPhoto.m in Sources */,
+				107B759113A2CD930099D9ED /* ReturnPhotoView.m in Sources */,
 				107B75B113A2CDB10099D9ED /* NSObject+JSON.m in Sources */,
 				107B75B213A2CDB10099D9ED /* SBJsonWriter.m in Sources */,
 				107B75B313A2CDB10099D9ED /* SBJsonStreamWriter.m in Sources */,

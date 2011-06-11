@@ -6,19 +6,25 @@
 //  Copyright 2011 Loud Street Ltd. All rights reserved.
 //
 
-#import "ReturnPhoto.h"
+#import "ReturnPhotoView.h"
 
 NSString *const FlickrAPIKey = @"da6619cd8f7a71642b9490cf81c6dbbd";
 NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
 
-@implementation ReturnPhoto
+@implementation ReturnPhotoView
 
--(void)searchFlickrPhotos:(NSString *)text
+@synthesize currentLocation;
+
+-(void)searchFlickrPhotos
 {
+    CLLocationDegrees newLat, newLon;
+    newLat = currentLocation.coordinate.latitude * -1;
+    newLon = currentLocation.coordinate.longitude * -1;
+    
     // Build the string to call the Flickr API
     NSString *urlString = 
     [NSString stringWithFormat:
-     @"http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=%@&tags=%@&per_page=15&format=json&nojsoncallback=1", FlickrAPIKey, @"iPhone"];
+     @"http://api.flickr.com/services/rest/?method=flickr.places.findByLatLon&api_key=%@&lat=%@&lon=%@&accuracy=6&format=json&nojsoncallback=1", FlickrAPIKey, newLat, newLon];
     
     // Create NSURL string from formatted string
     NSURL *url = [NSURL URLWithString:urlString];
@@ -28,7 +34,6 @@ NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
     [connection release];
     [request release];
-    
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data 
@@ -78,27 +83,6 @@ NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
     } 
 }
 
-- (void)getPlace:(CLLocation *)location
-{
-    CLLocationDegrees newLat, newLon;
-    newLat = location.coordinate.latitude * -1;
-    newLon = location.coordinate.longitude * -1;
-    
-    // Build the string to call the Flickr API
-    NSString *urlString = 
-    [NSString stringWithFormat:
-     @"http://api.flickr.com/services/rest/?method=flickr.places.findByLatLon&api_key=%@&lat=%@&lon=%@&accuracy=6&format=json&nojsoncallback=1", FlickrAPIKey, newLat, newLon];
-    
-    // Create NSURL string from formatted string
-    NSURL *url = [NSURL URLWithString:urlString];
-    
-    // Setup and start async download
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL: url];
-    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    [connection release];
-    [request release];
-}
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -131,9 +115,7 @@ NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
     photoTitles = [[NSMutableArray alloc] init];
     photoSmallImageData = [[NSMutableArray alloc] init];
     photoURLsLargeImage = [[NSMutableArray alloc] init];
-    
-    // Notice that I am hard-coding the search tag at this point (@"iPhone")    
-    [self searchFlickrPhotos:@"iPhone"];
+    [self searchFlickrPhotos];
 }
 
 - (void)viewDidUnload

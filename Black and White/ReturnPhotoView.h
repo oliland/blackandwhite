@@ -10,14 +10,15 @@
 #import <CoreLocation/CoreLocation.h>
 #import "SBJsonIncludes.h"
 
-@interface ReturnPhoto : UIViewController {
+@interface ReturnPhotoView : UIViewController {
     NSMutableArray  *photoTitles;         // Titles of images
     NSMutableArray  *photoSmallImageData; // Image data (thumbnail)
     NSMutableArray  *photoURLsLargeImage; // URL to larger image
-    CLLocation      *currentLoc;
+    CLLocation      *currentLocation;
 }
 
--(void)searchFlickrPhotos:(NSString *)text;
-- (void)getPlace:(CLLocation *)location;
+@property (nonatomic, assign) CLLocation *currentLocation;
+
+-(void)searchFlickrPhotos;
 
 @end

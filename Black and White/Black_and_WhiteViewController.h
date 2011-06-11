@@ -7,16 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 #import "SendPhotoView.h"
+#import "ReturnPhotoView.h"
 
 @interface Black_and_WhiteViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, SendPhotoViewDelegate> {
     IBOutlet UIButton *photoButton;
     UIImagePickerController *imagePicker;
     SendPhotoView *sendPhoto;
+    ReturnPhotoView *returnPhoto;
     IBOutlet UILabel *errorMessage;
 }
-
-@property (nonatomic, retain) UIImage *theImage;
 
 - (IBAction)displayCamera:(NSObject *)sender;
 
