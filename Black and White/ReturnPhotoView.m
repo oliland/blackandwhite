@@ -44,6 +44,33 @@ NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
     // Create a dictionary from the JSON string
     NSDictionary *results = [jsonString JSONValue];
     
+    if ([results objectForKey:@"places"] == nil)
+    {
+        NSArray *place = [[results objectForKey:@"places"] objectForKey:@"place"];
+        NSString *placeID = [[place objectAtIndex:0] objectForKey:@"place_id"];
+        
+        // Build the string to call the Flickr API
+        NSString *urlString = 
+        [NSString stringWithFormat:
+         @"http://api.flickr.com/services/rest/?method=flickr.photos.search&place_id=%@&min_upload_date=%@&format=json&nojsoncallback=1", FlickrAPIKey, placeID, "2006"];
+        
+        // Create NSURL string from formatted string
+        NSURL *url = [NSURL URLWithString:urlString];
+        
+        // Setup and start async download
+        NSURLRequest *request = [[NSURLRequest alloc] initWithURL: url];
+        NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        [connection release];
+        [request release];
+    } else if ([results objectForKey:@"photos"] != nil)
+    {
+        
+    } else
+    {
+        
+    }
+    
+    /*
     // Build an array from the dictionary for easy access to each entry
     NSArray *photos = [[results objectForKey:@"photos"] objectForKey:@"photo"];
     
@@ -81,6 +108,7 @@ NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
         
         NSLog(@"photoURLsLareImage: %@\n\n", photoURLString); 
     } 
+    */
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
