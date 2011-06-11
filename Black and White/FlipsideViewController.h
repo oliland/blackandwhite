@@ -18,7 +18,6 @@
     NSURLConnection *lastCon;
     CLLocationDegrees minLon, minLat, maxLon, maxLat;
     IBOutlet UIImageView *imageView;
-    IBOutlet UIActivityIndicatorView *indicator;
 }
 
 @property (nonatomic, assign) id <FlipsideViewControllerDelegate> delegate;
@@ -27,6 +26,7 @@
 
 - (IBAction)done:(id)sender;
 - (void)searchFlickrPhotos:(double)margin;
+//- (IBAction)clicked:(id)sender;
 
 @end
 
