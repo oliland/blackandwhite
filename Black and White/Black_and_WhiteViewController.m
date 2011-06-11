@@ -7,12 +7,15 @@
 //
 
 #import "Black_and_WhiteViewController.h"
-#import "SendPhoto.h"
 
 @implementation Black_and_WhiteViewController
 
+@synthesize theImage;
+
 - (void)dealloc
 {
+    [theImage release];
+    [sendPhoto release];
     [super dealloc];
 }
 
@@ -30,7 +33,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
 }
 
 - (void)viewDidUnload
@@ -55,8 +57,9 @@
         imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
         imagePicker.allowsEditing = YES;
         [self presentModalViewController:imagePicker animated:YES];
-    } else
+    } else {
         NSLog(@"Camera not found");
+    }
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
@@ -68,19 +71,32 @@
 - (void)imagePickerController:(UIImagePickerController *)picker
 didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    [[SendPhoto alloc] init];
     UIImage *originalImage, *editedImage;
     originalImage = (UIImage *) [info objectForKey:UIImagePickerControllerOriginalImage];
     editedImage = (UIImage *) [info objectForKey:UIImagePickerControllerEditedImage];
-    [[picker parentViewController] dismissModalViewControllerAnimated:YES];
+    if (editedImage) {
+        theImage = editedImage;
+    } else {
+        theImage = originalImage;
+    }
+    [self dismissModalViewControllerAnimated:YES];
     [picker release];
-    
-    SendPhoto *view;
-    if (editedImage)
-        view = [[SendPhoto alloc] initWithImage:editedImage];
-    else
-        view = [[SendPhoto alloc] initWithImage:originalImage];
-    [self presentModalViewController:view animated:TRUE];
+}
+
+- (void) viewDidAppear: (BOOL) animated
+{
+    if (theImage)
+    {
+        sendPhoto = [[SendPhotoView alloc] initWithNibName:@"SendPhoto" bundle:nil];
+        sendPhoto.delegate = self;
+        //sendPhoto.photoView.image = theImage;
+        [self presentModalViewController:sendPhoto animated:NO];
+    }
+}
+
+- (void)sendPhotoDidFinish:(SendPhotoView *)_sendPhoto {
+    [[_sendPhoto parentViewController] dismissModalViewControllerAnimated:YES];
+    [sendPhoto release];
 }
 
 @end
