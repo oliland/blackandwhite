@@ -78,6 +78,11 @@ NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
     } 
 }
 
+- (void)getPhoto:(CLLocation *)location
+{
+    
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
