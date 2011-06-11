@@ -50,16 +50,16 @@
 
 - (IBAction)displayCamera:(NSObject *)sender
 {
+    imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.delegate = self;
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
     {
-        imagePicker = [[UIImagePickerController alloc] init];
-        imagePicker.delegate = self;
         imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
         imagePicker.allowsEditing = YES;
-        [self presentModalViewController:imagePicker animated:YES];
     } else {
-        NSLog(@"Camera not found");
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
     }
+    [self presentModalViewController:imagePicker animated:YES];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
@@ -74,10 +74,12 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     UIImage *originalImage, *editedImage;
     originalImage = (UIImage *) [info objectForKey:UIImagePickerControllerOriginalImage];
     editedImage = (UIImage *) [info objectForKey:UIImagePickerControllerEditedImage];
+    sendPhoto = [[SendPhotoView alloc] initWithNibName:@"SendPhoto" bundle:nil];
+    sendPhoto.delegate = self;
     if (editedImage) {
-        theImage = editedImage;
+        sendPhoto.theImage = editedImage;
     } else {
-        theImage = originalImage;
+        sendPhoto.theImage = originalImage;
     }
     [self dismissModalViewControllerAnimated:YES];
     [picker release];
@@ -85,11 +87,8 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 
 - (void) viewDidAppear: (BOOL) animated
 {
-    if (theImage)
+    if (sendPhoto.theImage)
     {
-        sendPhoto = [[SendPhotoView alloc] initWithNibName:@"SendPhoto" bundle:nil];
-        sendPhoto.delegate = self;
-        //sendPhoto.photoView.image = theImage;
         [self presentModalViewController:sendPhoto animated:NO];
     }
 }

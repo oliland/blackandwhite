@@ -16,9 +16,11 @@
 
 @interface SendPhotoView : UIViewController {
     IBOutlet UIImageView *photoView;
+    UIImage *theImage;
 }
 
 @property (retain) id<SendPhotoViewDelegate> delegate;
-//@property (nonatomic, retain) UIImageView *photoView;
+@property (nonatomic, retain) UIImageView *photoView;
+@property (nonatomic, retain) UIImage *theImage;
 
 @end

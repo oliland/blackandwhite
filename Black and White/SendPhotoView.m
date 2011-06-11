@@ -11,7 +11,7 @@
 
 @implementation SendPhotoView
 
-@synthesize delegate;
+@synthesize theImage, photoView, delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,6 +41,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    photoView.image = theImage;
     // Do any additional setup after loading the view from its nib.
 }
 
