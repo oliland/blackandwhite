@@ -2,26 +2,26 @@
 //  Black_and_WhiteAppDelegate.m
 //  Black and White
 //
-//  Created by James Wheatley on 10/06/2011.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Created by Oli Kingshott on 11/06/2011.
+//  Copyright 2011 Loud Street Ltd. All rights reserved.
 //
 
 #import "Black_and_WhiteAppDelegate.h"
 
-#import "Black_and_WhiteViewController.h"
+#import "MainViewController.h"
 
 @implementation Black_and_WhiteAppDelegate
 
 
 @synthesize window=_window;
 
-@synthesize viewController=_viewController;
+@synthesize mainViewController=_mainViewController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-     
-    self.window.rootViewController = self.viewController;
+    // Add the main view controller's view to the window and display.
+    self.window.rootViewController = self.mainViewController;
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -68,7 +68,7 @@
 - (void)dealloc
 {
     [_window release];
-    [_viewController release];
+    [_mainViewController release];
     [super dealloc];
 }
 
