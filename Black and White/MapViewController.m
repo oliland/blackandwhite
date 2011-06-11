@@ -85,6 +85,7 @@
 {
     [super viewDidLoad];
     jsonparser = [[SBJsonParser alloc] init];
+    mapView.mapType = MKMapTypeSatellite;
     // Do any additional setup after loading the view from its nib.
 }
 
