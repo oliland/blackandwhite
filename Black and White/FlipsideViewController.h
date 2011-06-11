@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "SBJsonParser.h"
 
 @protocol FlipsideViewControllerDelegate;
 
 @interface FlipsideViewController : UIViewController<CLLocationManagerDelegate> {
-
+    SBJsonParser *jsonparser;
 }
 
 @property (nonatomic, assign) id <FlipsideViewControllerDelegate> delegate;

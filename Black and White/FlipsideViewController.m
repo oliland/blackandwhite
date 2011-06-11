@@ -42,9 +42,9 @@ NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
     // Store incoming data into a string
     NSString *jsonString = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSLog(@"Json: %@", jsonString);
-    /*
+    
     // Create a dictionary from the JSON string
-    NSDictionary *results = [jsonString valueForKey:@""];
+    NSDictionary *results = [jsonparser objectWithString:jsonString error:nil];
     
     if ([results objectForKey:@"places"] == nil)
     {
@@ -71,7 +71,7 @@ NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
     {
         
     }
-    
+    /*
      // Build an array from the dictionary for easy access to each entry
      NSArray *photos = [[results objectForKey:@"photos"] objectForKey:@"photo"];
      
@@ -108,7 +108,7 @@ NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
      [photoURLsLargeImage addObject:[NSURL URLWithString:photoURLString]];        
      
      NSLog(@"photoURLsLareImage: %@\n\n", photoURLString); 
-     } 
+     }
      */
 }
 
@@ -139,6 +139,9 @@ NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
 {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor viewFlipsideBackgroundColor];
+    
+    jsonparser = [[SBJsonParser alloc] init];
+
     locationManager = [[CLLocationManager alloc] init];
     locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers;
     locationManager.delegate = self;
