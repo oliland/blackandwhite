@@ -9,14 +9,15 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "SBJsonParser.h"
-#import <MapKit/MapKit.h>
+#import "MapViewController.h"
 
 @protocol FlipsideViewControllerDelegate;
 
-@interface FlipsideViewController : UIViewController<CLLocationManagerDelegate, UIScrollViewDelegate> {
+@interface FlipsideViewController : UIViewController<CLLocationManagerDelegate, UIScrollViewDelegate, MapViewControllerDelegate> {
     SBJsonParser *jsonparser;
-    NSURLConnection *lastCon;
+    NSURLConnection *photosCon;
     CLLocationDegrees minLon, minLat, maxLon, maxLat;
+    NSString *photoID;
     IBOutlet UIImageView *imageView;
     IBOutlet UIScrollView *scrollView;
 }
@@ -28,6 +29,7 @@
 @property (nonatomic, retain) UIImageView *imageView;
 
 - (IBAction)done:(id)sender;
+- (IBAction)showMap:(id)sender;
 - (void)searchFlickrPhotos:(double)margin;
 //- (IBAction)clicked:(id)sender;
 

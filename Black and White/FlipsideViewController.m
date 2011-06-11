@@ -60,8 +60,8 @@ NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
     // Setup and start async download
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL: url];
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    lastCon = connection;
-    [lastCon retain];
+    photosCon = connection;
+    [photosCon retain];
     [connection release];
     [request release];
 }
@@ -75,7 +75,7 @@ NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
     // Create a dictionary from the JSON string
     NSDictionary *results = [jsonparser objectWithString:jsonString error:nil];
     
-    if (connection == lastCon) {
+    if (connection == photosCon) {
         NSLog(@"INCOMING PHOTOS!");
         /*NSArray *photos = [[results objectForKey:@"photos"] objectForKey:@"photo"];
         NSDictionary *photo = [photos objectAtIndex:0];
@@ -108,6 +108,10 @@ NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
          [photo objectForKey:@"farm"], [photo objectForKey:@"server"], 
          [photo objectForKey:@"id"], [photo objectForKey:@"secret"]];
         NSLog(@"%@", photoURLString);
+        
+        [photoID release];
+        photoID = [photo objectForKey:@"id"];
+        [photoID retain];
         
         UIImage *thePhoto = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:photoURLString]]];
         imageView.image = thePhoto;
@@ -182,9 +186,15 @@ NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
      */
 }
 
-- (IBAction)showMap:(NSObject *)sender
+- (IBAction)showMap:(id)sender
 {
     //[B openURL:[[NSURL alloc] initWithString: @"http://maps.google.com/maps?q=London"]]
+    MapViewController *mapController = [[MapViewController alloc] init];
+    mapController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    mapController.delegate = self;
+    [mapController presentMap:photoID key:FlickrAPIKey];
+    [self presentModalViewController:mapController animated:YES];
+    [mapController release];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
@@ -250,6 +260,11 @@ NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
 - (IBAction)done:(id)sender
 {
     [self.delegate flipsideViewControllerDidFinish:self];
+}
+
+- (void)mapViewControllerDidFinish:(MapViewController *)controller
+{
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 @end
