@@ -10,9 +10,12 @@
 
 @implementation Black_and_WhiteViewController
 
+@synthesize imageSet, locationSet;
+
 - (void)dealloc
 {
     [sendPhoto release];
+    [returnPhoto release];
     [imagePicker release];
     [super dealloc];
 }
@@ -80,25 +83,31 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     } else {
         sendPhoto.theImage = originalImage;
     }
+    imageSet = YES;
     [self dismissModalViewControllerAnimated:YES];
     [picker release];
+    NSLog(@"finished picking image");
 }
 
 - (void) viewDidAppear: (BOOL) animated
 {
-    if (sendPhoto.theImage)
-    {
-        [self presentModalViewController:sendPhoto animated:NO];
-    }
-    if (returnPhoto.currentLocation) {
+    // we need to decide what mode just finished
+    if (locationSet) {
+        locationSet = NO;
         [self presentModalViewController:returnPhoto animated:NO];
+    }
+    if (imageSet)
+    {
+        imageSet = NO;
+        [self presentModalViewController:sendPhoto animated:NO];
     }
 }
 
 - (void)sendPhotoDidFinish:(SendPhotoView *)_sendPhoto withLocation:(CLLocation *)location withError:(NSString *)error {
-    [[_sendPhoto parentViewController] dismissModalViewControllerAnimated:YES];
-    [sendPhoto release];
+    NSLog(@"sendPhotoDidFinish");
     if (location) {
+        NSLog(@"Location is %@", location);
+        locationSet = YES;
         returnPhoto = [[ReturnPhotoView alloc] initWithNibName:@"ReturnPhoto" bundle:nil];
         returnPhoto.currentLocation = location;
         //returnPhoto.delegate = self;

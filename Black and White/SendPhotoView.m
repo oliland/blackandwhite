@@ -50,8 +50,11 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
 {
-    [locationManager stopUpdatingLocation];
-    [self.delegate sendPhotoDidFinish:self withLocation:bestEffortAtLocation withError:nil];
+    if(bestEffortAtLocation == nil) {
+        [locationManager stopUpdatingLocation];
+        [self.delegate sendPhotoDidFinish:self withLocation:newLocation withError:nil];
+    }
+    bestEffortAtLocation = newLocation;
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error

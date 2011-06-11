@@ -18,8 +18,8 @@ NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
 -(void)searchFlickrPhotos
 {
     CLLocationDegrees newLat, newLon;
-    newLat = currentLocation.coordinate.latitude * -1;
-    newLon = currentLocation.coordinate.longitude * -1;
+    newLat = currentLocation.coordinate.latitude;
+    newLon = currentLocation.coordinate.longitude;
     
     // Build the string to call the Flickr API
     NSString *urlString = 

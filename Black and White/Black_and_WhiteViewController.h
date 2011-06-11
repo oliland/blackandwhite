@@ -19,6 +19,9 @@
     IBOutlet UILabel *errorMessage;
 }
 
+@property (readonly) BOOL imageSet;
+@property (readonly) BOOL locationSet;
+
 - (IBAction)displayCamera:(NSObject *)sender;
 
 @end
