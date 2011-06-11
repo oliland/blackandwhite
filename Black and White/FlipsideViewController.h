@@ -15,6 +15,8 @@
 @interface FlipsideViewController : UIViewController<CLLocationManagerDelegate> {
     SBJsonParser *jsonparser;
     NSURLConnection *lastCon;
+    CLLocationDegrees minLon, minLat, maxLon, maxLat;
+    IBOutlet UIImageView *imageView;
 }
 
 @property (nonatomic, assign) id <FlipsideViewControllerDelegate> delegate;
