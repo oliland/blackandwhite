@@ -7,9 +7,8 @@
 //
 
 #import "FlipsideViewController.h"
-#import <CoreLocation/CoreLocation.h>
 
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate> {
+@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
     UIImagePickerController *imagePicker;
     IBOutlet UIImageView *photoView;
 }

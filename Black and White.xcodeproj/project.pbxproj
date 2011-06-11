@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		107B759113A2CD930099D9ED /* ReturnPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 107B758F13A2CD930099D9ED /* ReturnPhotoView.m */; };
-		107B759213A2CD930099D9ED /* ReturnPhoto.xib in Resources */ = {isa = PBXBuildFile; fileRef = 107B759013A2CD930099D9ED /* ReturnPhoto.xib */; };
 		107B75B113A2CDB10099D9ED /* NSObject+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 107B759813A2CDB10099D9ED /* NSObject+JSON.m */; };
 		107B75B213A2CDB10099D9ED /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 107B759A13A2CDB10099D9ED /* SBJsonWriter.m */; };
 		107B75B313A2CDB10099D9ED /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 107B759C13A2CDB10099D9ED /* SBJsonStreamWriter.m */; };
@@ -22,8 +20,6 @@
 		107B75BB13A2CDB10099D9ED /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = 107B75AC13A2CDB10099D9ED /* SBJsonStreamParserAdapter.m */; };
 		107B75BC13A2CDB10099D9ED /* SBJsonStreamParserAccumulator.m in Sources */ = {isa = PBXBuildFile; fileRef = 107B75AE13A2CDB10099D9ED /* SBJsonStreamParserAccumulator.m */; };
 		107B75BD13A2CDB10099D9ED /* SBStateStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 107B75B013A2CDB10099D9ED /* SBStateStack.m */; };
-		107B75C613A2D05B0099D9ED /* SendPhotoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 107B75C413A2D05B0099D9ED /* SendPhotoView.m */; };
-		107B75C713A2D05B0099D9ED /* SendPhoto.xib in Resources */ = {isa = PBXBuildFile; fileRef = 107B75C513A2D05B0099D9ED /* SendPhoto.xib */; };
 		107B763413A38EC60099D9ED /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 107B762F13A38EC50099D9ED /* MainViewController.m */; };
 		107B763513A38EC60099D9ED /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 107B763013A38EC50099D9ED /* MainView.xib */; };
 		107B763613A38EC60099D9ED /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 107B763213A38EC60099D9ED /* FlipsideViewController.m */; };
@@ -55,9 +51,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		107B758E13A2CD930099D9ED /* ReturnPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReturnPhotoView.h; sourceTree = "<group>"; };
-		107B758F13A2CD930099D9ED /* ReturnPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReturnPhotoView.m; sourceTree = "<group>"; };
-		107B759013A2CD930099D9ED /* ReturnPhoto.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReturnPhoto.xib; sourceTree = "<group>"; };
 		107B759513A2CDB10099D9ED /* SBJsonIncludes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonIncludes.h; sourceTree = "<group>"; };
 		107B759613A2CDB10099D9ED /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
 		107B759713A2CDB10099D9ED /* NSObject+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JSON.h"; sourceTree = "<group>"; };
@@ -86,9 +79,6 @@
 		107B75AE13A2CDB10099D9ED /* SBJsonStreamParserAccumulator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAccumulator.m; sourceTree = "<group>"; };
 		107B75AF13A2CDB10099D9ED /* SBStateStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBStateStack.h; sourceTree = "<group>"; };
 		107B75B013A2CDB10099D9ED /* SBStateStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBStateStack.m; sourceTree = "<group>"; };
-		107B75C313A2D05B0099D9ED /* SendPhotoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendPhotoView.h; sourceTree = "<group>"; };
-		107B75C413A2D05B0099D9ED /* SendPhotoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendPhotoView.m; sourceTree = "<group>"; };
-		107B75C513A2D05B0099D9ED /* SendPhoto.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SendPhoto.xib; sourceTree = "<group>"; };
 		107B762E13A38EC50099D9ED /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		107B762F13A38EC50099D9ED /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		107B763013A38EC50099D9ED /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
@@ -218,12 +208,6 @@
 				107B763213A38EC60099D9ED /* FlipsideViewController.m */,
 				107B763313A38EC60099D9ED /* FlipsideView.xib */,
 				107B759413A2CD9F0099D9ED /* SBJSON */,
-				107B758E13A2CD930099D9ED /* ReturnPhotoView.h */,
-				107B758F13A2CD930099D9ED /* ReturnPhotoView.m */,
-				107B759013A2CD930099D9ED /* ReturnPhoto.xib */,
-				107B75C313A2D05B0099D9ED /* SendPhotoView.h */,
-				107B75C413A2D05B0099D9ED /* SendPhotoView.m */,
-				107B75C513A2D05B0099D9ED /* SendPhoto.xib */,
 				1AD0177113A2B7A9001241C5 /* Supporting Files */,
 			);
 			path = "Black and White";
@@ -328,8 +312,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AD0177513A2B7A9001241C5 /* InfoPlist.strings in Resources */,
-				107B759213A2CD930099D9ED /* ReturnPhoto.xib in Resources */,
-				107B75C713A2D05B0099D9ED /* SendPhoto.xib in Resources */,
 				107B763513A38EC60099D9ED /* MainView.xib in Resources */,
 				107B763713A38EC60099D9ED /* FlipsideView.xib in Resources */,
 				107B763C13A395210099D9ED /* MainWindow.xib in Resources */,
@@ -369,7 +351,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AD0177813A2B7A9001241C5 /* main.m in Sources */,
-				107B759113A2CD930099D9ED /* ReturnPhotoView.m in Sources */,
 				107B75B113A2CDB10099D9ED /* NSObject+JSON.m in Sources */,
 				107B75B213A2CDB10099D9ED /* SBJsonWriter.m in Sources */,
 				107B75B313A2CDB10099D9ED /* SBJsonStreamWriter.m in Sources */,
@@ -383,7 +364,6 @@
 				107B75BB13A2CDB10099D9ED /* SBJsonStreamParserAdapter.m in Sources */,
 				107B75BC13A2CDB10099D9ED /* SBJsonStreamParserAccumulator.m in Sources */,
 				107B75BD13A2CDB10099D9ED /* SBStateStack.m in Sources */,
-				107B75C613A2D05B0099D9ED /* SendPhotoView.m in Sources */,
 				107B763413A38EC60099D9ED /* MainViewController.m in Sources */,
 				107B763613A38EC60099D9ED /* FlipsideViewController.m in Sources */,
 				107B763B13A395210099D9ED /* Black_and_WhiteAppDelegate.m in Sources */,

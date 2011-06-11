@@ -7,19 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @protocol FlipsideViewControllerDelegate;
 
-@interface FlipsideViewController : UIViewController {
+@interface FlipsideViewController : UIViewController<CLLocationManagerDelegate> {
 
 }
 
 @property (nonatomic, assign) id <FlipsideViewControllerDelegate> delegate;
+@property (nonatomic, assign) CLLocation *currentLocation;
+@property (nonatomic, assign) CLLocationManager *locationManager;
 
 - (IBAction)done:(id)sender;
+- (void)searchFlickrPhotos;
 
 @end
-
 
 @protocol FlipsideViewControllerDelegate
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller;
