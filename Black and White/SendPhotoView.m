@@ -8,10 +8,13 @@
 
 #import "SendPhotoView.h"
 
+NSString *const FlickrAPIKey = @"da6619cd8f7a71642b9490cf81c6dbbd";
+NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
+
 
 @implementation SendPhotoView
 
-@synthesize theImage, photoView, delegate;
+@synthesize theImage, photoView, delegate, bestEffortAtLocation;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -42,7 +45,20 @@
 {
     [super viewDidLoad];
     photoView.image = theImage;
-    // Do any additional setup after loading the view from its nib.
+    // We really don't care
+    locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers;
+    locationManager.delegate = self;
+    [locationManager startUpdatingLocation];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    [locationManager stopUpdatingLocation];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    [self.delegate sendPhotoDidFinish:self withLocation:bestEffortAtLocation withError:@"Error getting location"];
 }
 
 - (void)viewDidUnload

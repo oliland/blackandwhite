@@ -13,6 +13,7 @@
     IBOutlet UIButton *photoButton;
     UIImagePickerController *imagePicker;
     SendPhotoView *sendPhoto;
+    IBOutlet UILabel *errorMessage;
 }
 
 @property (nonatomic, retain) UIImage *theImage;

@@ -93,9 +93,13 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     }
 }
 
-- (void)sendPhotoDidFinish:(SendPhotoView *)_sendPhoto {
+- (void)sendPhotoDidFinish:(SendPhotoView *)_sendPhoto withLocation:(CLLocation *)location withError:(NSString *)error {
     [[_sendPhoto parentViewController] dismissModalViewControllerAnimated:YES];
     [sendPhoto release];
+    if (location) {
+        [self dismissModalViewControllerAnimated:TRUE];
+    }
+    errorMessage.text = error;
 }
 
 @end

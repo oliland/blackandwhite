@@ -7,20 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @class SendPhotoView;
 
 @protocol SendPhotoViewDelegate
-- (void)sendPhotoDidFinish:(SendPhotoView*)sendPhoto;
+- (void)sendPhotoDidFinish:(SendPhotoView*)sendPhoto withLocation:(CLLocation *)location withError:(NSString *)error;
 @end
 
-@interface SendPhotoView : UIViewController {
+@interface SendPhotoView : UIViewController<CLLocationManagerDelegate> {
     IBOutlet UIImageView *photoView;
     UIImage *theImage;
+    CLLocationManager *locationManager;
 }
 
 @property (retain) id<SendPhotoViewDelegate> delegate;
 @property (nonatomic, retain) UIImageView *photoView;
 @property (nonatomic, retain) UIImage *theImage;
+@property (nonatomic, retain) CLLocation *bestEffortAtLocation;
 
 @end
