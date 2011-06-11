@@ -6,32 +6,22 @@
 //  Copyright 2011 Loud Street Ltd. All rights reserved.
 //
 
-#import "SendPhoto.h"
+#import "SendPhotoView.h"
 
 
-@implementation SendPhoto
+@implementation SendPhotoView
 
-@synthesize theImage;
+@synthesize delegate;
 
-- (id)initWithPhoto:(UIImage *)image {
-    self = [super init];
-    if (self) {
-        NSLog(@"In initWithPhoto");
-        theImage = image;
-    }
-    return self;
-}
-
-/*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
+    NSLog(@"In initWithNibName");
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
     }
     return self;
 }
-*/
 
 - (void)dealloc
 {
