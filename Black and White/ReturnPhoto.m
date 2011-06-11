@@ -78,9 +78,25 @@ NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
     } 
 }
 
-- (void)getPhoto:(CLLocation *)location
+- (void)getPlace:(CLLocation *)location
 {
+    CLLocationDegrees newLat, newLon;
+    newLat = location.coordinate.latitude * -1;
+    newLon = location.coordinate.longitude * -1;
     
+    // Build the string to call the Flickr API
+    NSString *urlString = 
+    [NSString stringWithFormat:
+     @"http://api.flickr.com/services/rest/?method=flickr.places.findByLatLon&api_key=%@&lat=%@&lon=%@&accuracy=6&format=json&nojsoncallback=1", FlickrAPIKey, newLat, newLon];
+    
+    // Create NSURL string from formatted string
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    // Setup and start async download
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL: url];
+    NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    [connection release];
+    [request release];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
