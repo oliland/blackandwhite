@@ -26,6 +26,7 @@
 		107B763713A38EC60099D9ED /* FlipsideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 107B763313A38EC60099D9ED /* FlipsideView.xib */; };
 		107B763B13A395210099D9ED /* Black_and_WhiteAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 107B763913A395200099D9ED /* Black_and_WhiteAppDelegate.m */; };
 		107B763C13A395210099D9ED /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 107B763A13A395200099D9ED /* MainWindow.xib */; };
+		107B764313A3C92B0099D9ED /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 107B764213A3C92B0099D9ED /* Default.png */; };
 		1AD0176B13A2B7A9001241C5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD0176A13A2B7A9001241C5 /* UIKit.framework */; };
 		1AD0176D13A2B7A9001241C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD0176C13A2B7A9001241C5 /* Foundation.framework */; };
 		1AD0176F13A2B7A9001241C5 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD0176E13A2B7A9001241C5 /* CoreGraphics.framework */; };
@@ -90,6 +91,7 @@
 		107B763813A395200099D9ED /* Black_and_WhiteAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Black_and_WhiteAppDelegate.h; sourceTree = "<group>"; };
 		107B763913A395200099D9ED /* Black_and_WhiteAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Black_and_WhiteAppDelegate.m; sourceTree = "<group>"; };
 		107B763A13A395200099D9ED /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		107B764213A3C92B0099D9ED /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = "Black and White/Default.png"; sourceTree = "<group>"; };
 		1AD0176613A2B7A9001241C5 /* Black and White.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Black and White.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AD0176A13A2B7A9001241C5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1AD0176C13A2B7A9001241C5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -174,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				1AD0181F13A3C60E001241C5 /* icon2.png */,
+				107B764213A3C92B0099D9ED /* Default.png */,
 				1AD0181413A3C535001241C5 /* MapKit.framework */,
 				1AD0177013A2B7A9001241C5 /* Black and White */,
 				1AD0179013A2B7A9001241C5 /* Black and WhiteTests */,
@@ -323,6 +326,7 @@
 				107B763713A38EC60099D9ED /* FlipsideView.xib in Resources */,
 				107B763C13A395210099D9ED /* MainWindow.xib in Resources */,
 				1AD0182013A3C60E001241C5 /* icon2.png in Resources */,
+				107B764313A3C92B0099D9ED /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
