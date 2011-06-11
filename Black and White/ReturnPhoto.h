@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 #import "SBJsonIncludes.h"
 
 @interface ReturnPhoto : UIViewController {
@@ -16,5 +17,6 @@
 }
 
 -(void)searchFlickrPhotos:(NSString *)text;
+- (void)getPhoto:(CLLocation *)location;
 
 @end

@@ -39,6 +39,7 @@
 		1AD0179513A2B7A9001241C5 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1AD0179313A2B7A9001241C5 /* InfoPlist.strings */; };
 		1AD0179813A2B7A9001241C5 /* Black_and_WhiteTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 1AD0179713A2B7A9001241C5 /* Black_and_WhiteTests.h */; };
 		1AD0179A13A2B7A9001241C5 /* Black_and_WhiteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD0179913A2B7A9001241C5 /* Black_and_WhiteTests.m */; };
+		1AD017B813A2EB3A001241C5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD017B713A2EB3A001241C5 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,7 @@
 		1AD0179613A2B7A9001241C5 /* Black and WhiteTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Black and WhiteTests-Prefix.pch"; sourceTree = "<group>"; };
 		1AD0179713A2B7A9001241C5 /* Black_and_WhiteTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Black_and_WhiteTests.h; sourceTree = "<group>"; };
 		1AD0179913A2B7A9001241C5 /* Black_and_WhiteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Black_and_WhiteTests.m; sourceTree = "<group>"; };
+		1AD017B713A2EB3A001241C5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AD017B813A2EB3A001241C5 /* CoreLocation.framework in Frameworks */,
 				1AD0176B13A2B7A9001241C5 /* UIKit.framework in Frameworks */,
 				1AD0176D13A2B7A9001241C5 /* Foundation.framework in Frameworks */,
 				1AD0176F13A2B7A9001241C5 /* CoreGraphics.framework in Frameworks */,
@@ -189,6 +192,7 @@
 		1AD0176913A2B7A9001241C5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1AD017B713A2EB3A001241C5 /* CoreLocation.framework */,
 				1AD0176A13A2B7A9001241C5 /* UIKit.framework */,
 				1AD0176C13A2B7A9001241C5 /* Foundation.framework */,
 				1AD0176E13A2B7A9001241C5 /* CoreGraphics.framework */,
