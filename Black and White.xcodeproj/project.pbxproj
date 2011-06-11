@@ -38,6 +38,8 @@
 		1AD0179813A2B7A9001241C5 /* Black_and_WhiteTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 1AD0179713A2B7A9001241C5 /* Black_and_WhiteTests.h */; };
 		1AD0179A13A2B7A9001241C5 /* Black_and_WhiteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AD0179913A2B7A9001241C5 /* Black_and_WhiteTests.m */; };
 		1AD017B813A2EB3A001241C5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD017B713A2EB3A001241C5 /* CoreLocation.framework */; };
+		1AD0181513A3C535001241C5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD0181413A3C535001241C5 /* MapKit.framework */; };
+		1AD0182013A3C60E001241C5 /* icon2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AD0181F13A3C60E001241C5 /* icon2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +105,8 @@
 		1AD0179713A2B7A9001241C5 /* Black_and_WhiteTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Black_and_WhiteTests.h; sourceTree = "<group>"; };
 		1AD0179913A2B7A9001241C5 /* Black_and_WhiteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Black_and_WhiteTests.m; sourceTree = "<group>"; };
 		1AD017B713A2EB3A001241C5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		1AD0181413A3C535001241C5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		1AD0181F13A3C60E001241C5 /* icon2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon2.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AD0181513A3C535001241C5 /* MapKit.framework in Frameworks */,
 				1AD017B813A2EB3A001241C5 /* CoreLocation.framework in Frameworks */,
 				1AD0176B13A2B7A9001241C5 /* UIKit.framework in Frameworks */,
 				1AD0176D13A2B7A9001241C5 /* Foundation.framework in Frameworks */,
@@ -168,6 +173,8 @@
 		1AD0175B13A2B7A8001241C5 = {
 			isa = PBXGroup;
 			children = (
+				1AD0181F13A3C60E001241C5 /* icon2.png */,
+				1AD0181413A3C535001241C5 /* MapKit.framework */,
 				1AD0177013A2B7A9001241C5 /* Black and White */,
 				1AD0179013A2B7A9001241C5 /* Black and WhiteTests */,
 				1AD0176913A2B7A9001241C5 /* Frameworks */,
@@ -315,6 +322,7 @@
 				107B763513A38EC60099D9ED /* MainView.xib in Resources */,
 				107B763713A38EC60099D9ED /* FlipsideView.xib in Resources */,
 				107B763C13A395210099D9ED /* MainWindow.xib in Resources */,
+				1AD0182013A3C60E001241C5 /* icon2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

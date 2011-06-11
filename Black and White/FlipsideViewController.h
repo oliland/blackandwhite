@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "SBJsonParser.h"
+#import <MapKit/MapKit.h>
 
 @protocol FlipsideViewControllerDelegate;
 
