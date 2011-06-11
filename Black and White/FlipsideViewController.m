@@ -16,16 +16,37 @@ NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
 
 @synthesize delegate=_delegate, currentLocation, locationManager;
 
--(void)searchFlickrPhotos
+-(void)searchFlickrPhotos:(double)margin
 {
-    CLLocationDegrees newLat, newLon;
-    newLat = currentLocation.coordinate.latitude;
-    newLon = currentLocation.coordinate.longitude;
+    CLLocationDegrees newLon, newLat;
+    newLon = currentLocation.coordinate.longitude * -1;
+    newLat = currentLocation.coordinate.latitude * -1;
+    
+    CLLocationDegrees minLon, minLat, maxLon, maxLat;
+    
+    minLon = newLon - (margin * 2);
+    if (minLon < -180)
+        minLon = -180;
+    
+    minLat = newLat - margin;
+    if (minLat < -90)
+        minLat = -90;
+    
+    maxLon = newLon + (margin * 2);
+    if (maxLon > 180)
+        maxLon = 180;
+    
+    maxLat = newLat + (margin * 2);
+    if (maxLat > 90)
+        maxLat = 90;
+    
+    NSLog(@"lat = %f", newLat);
+    NSLog(@"lon = %f", newLon);
     
     // Build the string to call the Flickr API
     NSString *urlString = 
     [NSString stringWithFormat:
-     @"http://api.flickr.com/services/rest/?method=flickr.places.findByLatLon&api_key=%@&lat=%f&lon=%f&accuracy=6&format=json&nojsoncallback=1", FlickrAPIKey, newLat, newLon];
+     @"http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=%@&bbox=%f,%f,%f,%f&min_upload_date=2006&&per_page=15format=json&nojsoncallback=1", FlickrAPIKey, minLon, minLat, maxLon, maxLat];
     NSLog(@"URLString is %@", urlString);
     // Create NSURL string from formatted string
     NSURL *url = [NSURL URLWithString:urlString];
@@ -33,6 +54,8 @@ NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
     // Setup and start async download
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL: url];
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    lastCon = connection;
+    [lastCon retain];
     [connection release];
     [request release];
 }
@@ -46,6 +69,12 @@ NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
     // Create a dictionary from the JSON string
     NSDictionary *results = [jsonparser objectWithString:jsonString error:nil];
     
+    if (connection == lastCon) {
+        NSLog(@"INCOMING PHOTOS!");
+        
+    }
+    
+    /*
     if ([results objectForKey:@"places"] == nil)
     {
         NSArray *place = [[results objectForKey:@"places"] objectForKey:@"place"];
@@ -71,6 +100,7 @@ NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
     {
         
     }
+     */
     /*
      // Build an array from the dictionary for easy access to each entry
      NSArray *photos = [[results objectForKey:@"photos"] objectForKey:@"photo"];
@@ -116,7 +146,7 @@ NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
     if(currentLocation == nil) {
         [locationManager stopUpdatingLocation];
         currentLocation = newLocation;
-        [self searchFlickrPhotos];
+        [self searchFlickrPhotos:5];
     }
 }
 

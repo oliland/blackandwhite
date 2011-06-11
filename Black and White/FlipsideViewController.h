@@ -14,6 +14,7 @@
 
 @interface FlipsideViewController : UIViewController<CLLocationManagerDelegate> {
     SBJsonParser *jsonparser;
+    NSURLConnection *lastCon;
 }
 
 @property (nonatomic, assign) id <FlipsideViewControllerDelegate> delegate;
@@ -21,7 +22,7 @@
 @property (nonatomic, assign) CLLocationManager *locationManager;
 
 - (IBAction)done:(id)sender;
-- (void)searchFlickrPhotos;
+- (void)searchFlickrPhotos:(double)margin;
 
 @end
 
