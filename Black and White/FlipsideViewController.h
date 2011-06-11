@@ -17,6 +17,7 @@
     NSURLConnection *lastCon;
     CLLocationDegrees minLon, minLat, maxLon, maxLat;
     IBOutlet UIImageView *imageView;
+    IBOutlet UIActivityIndicatorView *indicator;
 }
 
 @property (nonatomic, assign) id <FlipsideViewControllerDelegate> delegate;
