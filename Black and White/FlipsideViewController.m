@@ -52,7 +52,7 @@ NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
     // Build the string to call the Flickr API
     NSString *urlString = 
     [NSString stringWithFormat:
-     @"http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=%@&bbox=%f,%f,%f,%f&min_upload_date=2004&&per_page=15&format=json&nojsoncallback=1", FlickrAPIKey, minLon, minLat, maxLon, maxLat];
+     @"http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=%@&bbox=%f,%f,%f,%f&min_upload_date=2004&&per_page=10&format=json&nojsoncallback=1", FlickrAPIKey, minLon, minLat, maxLon, maxLat];
     NSLog(@"URLString is %@", urlString);
     // Create NSURL string from formatted string
     NSURL *url = [NSURL URLWithString:urlString];
@@ -77,37 +77,47 @@ NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
     
     if (connection == photosCon) {
         NSLog(@"INCOMING PHOTOS!");
-        /*NSArray *photos = [[results objectForKey:@"photos"] objectForKey:@"photo"];
-        NSDictionary *photo = [photos objectAtIndex:0];
-        NSString *photoID = [photo objectForKey:@"id"];*/
         
         NSDictionary *data = [results objectForKey:@"photos"];
-        NSNumber *pages = [data objectForKey:@"pages"];
-        int page = (arc4random() % ([pages intValue] - 1)) + 1;
+        //NSNumber *pages = [data objectForKey:@"pages"];
+        NSString *totalStr = [data objectForKey:@"total"];
+        int totalNum = [totalStr intValue];
         
-        // Build the string to call the Flickr API
-        NSString *urlString = 
-        [NSString stringWithFormat:
-         @"http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=%@&bbox=%f,%f,%f,%f&min_upload_date=2004&&per_page=15&page=%d&format=json&nojsoncallback=1", FlickrAPIKey, minLon, minLat, maxLon, maxLat, page];
-        NSLog(@"URLString is %@", urlString);
-        // Create NSURL string from formatted string
-        NSURL *url = [NSURL URLWithString:urlString];
-        
-        // Setup and start async download
-        NSURLRequest *request = [[NSURLRequest alloc] initWithURL: url];
-        NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-        [connection release];
-        [request release];
+        if ((totalNum >= 100) && (currentMargin <= 45)) {
+            //int page = (arc4random() % ([pages intValue] - 1)) + 1;
+            
+            photoNum = (arc4random() % totalNum) + 1;
+            int page = photoNum / 10;
+            // Build the string to call the Flickr API
+            NSString *urlString = 
+            [NSString stringWithFormat:
+             @"http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=%@&bbox=%f,%f,%f,%f&min_upload_date=2004&&per_page=10&page=%d&format=json&nojsoncallback=1", FlickrAPIKey, minLon, minLat, maxLon, maxLat, page];
+            NSLog(@"URLString is %@", urlString);
+            // Create NSURL string from formatted string
+            NSURL *url = [NSURL URLWithString:urlString];
+            
+            // Setup and start async download
+            NSURLRequest *request = [[NSURLRequest alloc] initWithURL: url];
+            NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+            [connection release];
+            [request release];
+        } else if (currentMargin > 45) {
+            NSLog(@"Not enough photos found. There must be a problem with Flickr");
+        } else {
+            currentMargin += 5;
+            [self searchFlickrPhotos:currentMargin];
+        }
     } else {
         NSArray *photos = [[results objectForKey:@"photos"] objectForKey:@"photo"];
-        int photoNum = arc4random() % 15;
-        NSDictionary *photo = [photos objectAtIndex:photoNum];
+        int photoOnPage = photoNum % 10;
+        NSDictionary *photo = [photos objectAtIndex:photoOnPage];
         
         NSString *photoURLString = 
         [NSString stringWithFormat:@"http://farm%@.static.flickr.com/%@/%@_%@_b.jpg", 
          [photo objectForKey:@"farm"], [photo objectForKey:@"server"], 
          [photo objectForKey:@"id"], [photo objectForKey:@"secret"]];
         NSLog(@"%@", photoURLString);
+        NSLog(@"%f", currentMargin);
         
         [photoID release];
         photoID = [photo objectForKey:@"id"];
@@ -117,73 +127,6 @@ NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
         imageView.image = thePhoto;
         [imageView sizeToFit];
     }
-    
-    /*
-    if ([results objectForKey:@"places"] == nil)
-    {
-        NSArray *place = [[results objectForKey:@"places"] objectForKey:@"place"];
-        NSString *placeID = [[place objectAtIndex:0] objectForKey:@"place_id"];
-        
-        // Build the string to call the Flickr API
-        NSString *urlString = 
-        [NSString stringWithFormat:
-         @"http://api.flickr.com/services/rest/?method=flickr.photos.search&place_id=%@&min_upload_date=%@&format=json&nojsoncallback=1", FlickrAPIKey, placeID, "2006"];
-        
-        // Create NSURL string from formatted string
-        NSURL *url = [NSURL URLWithString:urlString];
-        
-        // Setup and start async download
-        NSURLRequest *request = [[NSURLRequest alloc] initWithURL: url];
-        NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-        [connection release];
-        [request release];
-    } else if ([results objectForKey:@"photos"] != nil)
-    {
-        
-    } else
-    {
-        
-    }
-     */
-    /*
-     // Build an array from the dictionary for easy access to each entry
-     NSArray *photos = [[results objectForKey:@"photos"] objectForKey:@"photo"];
-     
-     // Loop through each entry in the dictionary...
-     for (NSDictionary *photo in photos)
-     {
-     // Get title of the image
-     NSString *title = [photo objectForKey:@"title"];
-     
-     // Save the title to the photo titles array
-     [photoTitles addObject:(title.length > 0 ? title : @"Untitled")];
-     
-     // Build the URL to where the image is stored (see the Flickr API)
-     // In the format http://farmX.static.flickr.com/server/id_secret.jpg
-     // Notice the "_s" which requests a "small" image 75 x 75 pixels
-     NSString *photoURLString = 
-     [NSString stringWithFormat:@"http://farm%@.static.flickr.com/%@/%@_%@_s.jpg", 
-     [photo objectForKey:@"farm"], [photo objectForKey:@"server"], 
-     [photo objectForKey:@"id"], [photo objectForKey:@"secret"]];
-     
-     NSLog(@"photoURLString: %@", photoURLString);
-     
-     // The performance (scrolling) of the table will be much better if we
-     // build an array of the image data here, and then add this data as
-     // the cell.image value (see cellForRowAtIndexPath:)
-     [photoSmallImageData addObject:[NSData dataWithContentsOfURL:[NSURL URLWithString:photoURLString]]];
-     
-     // Build and save the URL to the large image so we can zoom
-     // in on the image if requested
-     photoURLString = 
-     [NSString stringWithFormat:@"http://farm%@.static.flickr.com/%@/%@_%@_m.jpg", 
-     [photo objectForKey:@"farm"], [photo objectForKey:@"server"], 
-     [photo objectForKey:@"id"], [photo objectForKey:@"secret"]];
-     [photoURLsLargeImage addObject:[NSURL URLWithString:photoURLString]];        
-     
-     NSLog(@"photoURLsLareImage: %@\n\n", photoURLString); 
-     }
-     */
 }
 
 - (IBAction)showMap:(id)sender
@@ -201,7 +144,9 @@ NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
     if(currentLocation == nil) {
         [locationManager stopUpdatingLocation];
         currentLocation = newLocation;
-        [self searchFlickrPhotos:10];
+        [currentLocation retain];
+        currentMargin = 2.5;
+        [self searchFlickrPhotos:currentMargin];
     }
 }
 

@@ -20,6 +20,8 @@
     NSString *photoID;
     IBOutlet UIImageView *imageView;
     IBOutlet UIScrollView *scrollView;
+    double currentMargin;
+    int photoNum;
 }
 
 @property (nonatomic, assign) id <FlipsideViewControllerDelegate> delegate;
