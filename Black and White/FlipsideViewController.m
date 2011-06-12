@@ -131,7 +131,6 @@ NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
 
 - (IBAction)showMap:(id)sender
 {
-    //[B openURL:[[NSURL alloc] initWithString: @"http://maps.google.com/maps?q=London"]]
     MapViewController *mapController = [[MapViewController alloc] init];
     mapController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     mapController.delegate = self;
