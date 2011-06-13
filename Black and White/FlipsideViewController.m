@@ -103,6 +103,13 @@ NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
             [request release];
         } else if (currentMargin > 45) {
             NSLog(@"Not enough photos found. There must be a problem with Flickr");
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Couldn't find any photos! Are you connected to the Internet?"
+                                                            message:nil
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"I fucked up, not the app"
+                                                  otherButtonTitles:nil];
+            [alert autorelease];
+            [alert show];
         } else {
             currentMargin += 5;
             [self searchFlickrPhotos:currentMargin];
