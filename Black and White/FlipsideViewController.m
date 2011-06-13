@@ -132,7 +132,7 @@ NSString *const FlickrToken = @"72157626931862392-cb6c5d731bcfa154";
         
         UIImage *thePhoto = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:photoURLString]]];
         imageView.image = thePhoto;
-        [imageView sizeToFit];
+        imageView.contentMode = UIViewContentModeScaleAspectFit;
     }
 }
 
